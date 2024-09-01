@@ -2,9 +2,11 @@
 using AbstractFactoryDesignPattern;
 using AdapterPattern;
 using BuilderDesignPattern;
+using FacadePattern;
 using FactoryDesignPattern;
 using ObserverPattern;
 using SingletonPattern;
+using StrategyPattern;
 
 Console.WriteLine("Hello, World!");
 
@@ -86,4 +88,25 @@ ICostCalculator calculator = new EuroCostCalculatorAdapter(costCalculator);
 Order orderInEuro =  new Order(calculator);
 orderInEuro.PrintTotalCost(100);
 
+//Strategy Pattern
+//Pay using Credit Card
+IPaymentStrategy paymentStartegy = new CreditCardPayment("1234-5678-9012-3456");
+PaymentProcessor ccPaymentProcessor = new PaymentProcessor(paymentStartegy);
+ccPaymentProcessor.ProcessPayment(100.00m);
 
+//Pay using PayPal
+IPaymentStrategy payPalPaymentStrategy = new PayPalPayment("user@example.com");
+PaymentProcessor paypalPaymentProcessor = new PaymentProcessor(payPalPaymentStrategy);
+paypalPaymentProcessor.ProcessPayment(150.00m);
+
+// Pay using Bank Transfer
+IPaymentStrategy bankTransferPayment = new BankTransferPayment("987654321");
+PaymentProcessor processor3 = new PaymentProcessor(bankTransferPayment);
+processor3.ProcessPayment(200.75m);
+
+//Facade pattern
+// Create the facade
+FinancialFacade financialFacade = new FinancialFacade();
+
+// Use the facade to transfer money
+financialFacade.TransferMoney("123456789", "987654321", 500.0);

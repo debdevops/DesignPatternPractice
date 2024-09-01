@@ -11,9 +11,11 @@
     <ProjectReference Include="..\AbstractFactoryDesignPattern\AbstractFactoryDesignPattern.csproj" />
     <ProjectReference Include="..\AdapterPattern\AdapterPattern.csproj" />
     <ProjectReference Include="..\BuilderDesignPattern\BuilderDesignPattern.csproj" />
+    <ProjectReference Include="..\FacadePattern\FacadePattern.csproj" />
     <ProjectReference Include="..\FactoryDesignPattern\FactoryDesignPattern.csproj" />
     <ProjectReference Include="..\ObserverPattern\ObserverPattern.csproj" />
     <ProjectReference Include="..\SingletonPattern\SingletonPattern.csproj" />
+    <ProjectReference Include="..\StrategyPattern\StrategyPattern.csproj" />
   </ItemGroup>
 
 </Project>
