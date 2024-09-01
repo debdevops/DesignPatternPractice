@@ -106,7 +106,7 @@
     }
 
     /// <summary>
-    /// Concreteobserver (Investor)
+    /// Concrete observer (Investor)
     /// </summary>
     /// <seealso cref="ObserverPattern.IInvestor" />
     public class Investor : IInvestor
