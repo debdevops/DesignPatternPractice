@@ -2,6 +2,7 @@
 using AbstractFactoryDesignPattern;
 using BuilderDesignPattern;
 using FactoryDesignPattern;
+using ObserverPattern;
 using SingletonPattern;
 
 Console.WriteLine("Hello, World!");
@@ -51,3 +52,23 @@ House house = builder.AddWindow(1)
     .Build();
 Console.WriteLine(house);
 
+//Observer pattern
+
+//Create stock (subject)
+Stock googleStock = new Stock("Google", 1000);
+
+// Create investors (observers)
+Investor simon = new Investor("Simon");
+Investor alen = new Investor("Alen");
+
+// Attach investors to the stock
+googleStock.Attach(simon);
+googleStock.Attach(alen);
+
+// Change stock price and notify investors
+googleStock.SetPrice(1200);
+googleStock.SetPrice(1500);
+
+// Detach an investor and change the price again
+googleStock.Detach(simon);
+googleStock.SetPrice(900);
