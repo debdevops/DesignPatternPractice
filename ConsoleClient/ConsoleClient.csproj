@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AbstractFactoryDesignPattern\AbstractFactoryDesignPattern.csproj" />
+    <ProjectReference Include="..\AdapterPattern\AdapterPattern.csproj" />
     <ProjectReference Include="..\BuilderDesignPattern\BuilderDesignPattern.csproj" />
     <ProjectReference Include="..\FactoryDesignPattern\FactoryDesignPattern.csproj" />
     <ProjectReference Include="..\ObserverPattern\ObserverPattern.csproj" />

@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AbstractFactoryDesignPattern;
+using AdapterPattern;
 using BuilderDesignPattern;
 using FactoryDesignPattern;
 using ObserverPattern;
@@ -72,3 +73,17 @@ googleStock.SetPrice(1500);
 // Detach an investor and change the price again
 googleStock.Detach(simon);
 googleStock.SetPrice(900);
+
+//Adapter Pattern
+//Use the leagcy USD calculator
+ICostCalculator usdCostCalculator = new UsdCostCalculator();
+Order orderInUSD = new Order(usdCostCalculator);
+orderInUSD.PrintTotalCost(100);
+
+//Use the Euro calculator via the Adapter
+EuroCostCalculator costCalculator = new EuroCostCalculator();
+ICostCalculator calculator = new EuroCostCalculatorAdapter(costCalculator);
+Order orderInEuro =  new Order(calculator);
+orderInEuro.PrintTotalCost(100);
+
+
